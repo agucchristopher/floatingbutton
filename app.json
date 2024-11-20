@@ -1,28 +1,40 @@
 {
   "expo": {
-    "name": "mvp",
-    "slug": "mvp",
+    "name": "FloatingButtonApp",
+    "slug": "floating-button-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.floatingbuttonapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.yourcompany.floatingbuttonapp",
+      "permissions": ["SYSTEM_ALERT_WINDOW", "FOREGROUND_SERVICE", "WAKE_LOCK"]
     },
     "web": {
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
+    "experiments": {
+      "typedRoutes": true
+    },
     "plugins": [
+      "expo-system-ui",
+      "expo-navigation-bar",
       "expo-router",
       [
         "expo-splash-screen",
@@ -34,8 +46,12 @@
         }
       ]
     ],
-    "experiments": {
-      "typedRoutes": true
-    }
+    "extra": {
+      "eas": {
+        "projectId": "9fc4d63d-28fa-4603-881f-86d4a732c88b"
+      },
+      "expo-navigation-bar": {}
+    },
+    "owner": "devkay"
   }
 }
